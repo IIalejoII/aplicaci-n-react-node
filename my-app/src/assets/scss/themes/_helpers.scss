@@ -1,0 +1,130 @@
+.margin-top {
+	&0 {
+		margin-top: 0px;
+	}
+	&5 {
+		margin-top: 5px;
+	}
+	&10 {
+		margin-top: 10px;
+	}
+	&15 {
+		margin-top: 15px;
+	}
+	&20 {
+		margin-top: 20px;
+	}
+}
+
+.margin-right {
+	&0 {
+		margin-right: 0px;
+	}
+	&5 {
+		margin-right: 5px;
+	}
+	&10 {
+		margin-right: 10px;
+	}
+	&15 {
+		margin-right: 15px;
+	}
+	&20 {
+		margin-right: 20px;
+	}
+}
+
+.margin-bottom {
+	&0 {
+		margin-bottom: 0px;
+	}
+	&5 {
+		margin-bottom: 5px;
+	}
+	&10 {
+		margin-bottom: 10px;
+	}
+	&15 {
+		margin-bottom: 15px;
+	}
+	&20 {
+		margin-bottom: 20px;
+	}
+}
+
+.margin-left {
+	&5 {
+		margin-left: 0px;
+	}
+	&5 {
+		margin-left: 5px;
+	}
+	&10 {
+		margin-left: 10px;
+	}
+	&15 {
+		margin-left: 15px;
+	}
+	&20 {
+		margin-left: 20px;
+	}
+}
+
+.font-size {
+	&-14 {
+		font-size: 14px;
+	}
+	&-16 {
+		font-size: 16px;
+	}
+	&-18 {
+		font-size: 18px;
+	}
+	&-20 {
+		font-size: 20px;
+	}
+	&-22 {
+		font-size: 22px;
+	}
+	&-24 {
+		font-size: 24px;
+	}	
+	&-26 {
+		font-size: 26px;
+	}
+	&-28 {
+		font-size: 28px;
+	}
+	&-30 {
+		font-size: 30px;
+	}
+	&-32 {
+		font-size: 32px;
+	}
+	&-34 {
+		font-size: 34px;
+	}
+	&-36 {
+		font-size: 36px;
+	}	
+	&-38 {
+		font-size: 38px;
+	}	
+}
+
+.text {
+	&-primary-orange {
+		color: $primary-orange !important;
+	}&-gray {
+		color: $gray !important;
+	}
+}
+
+.background {
+	&-white {
+		background-color: $white !important;
+	}
+	&-whiteFull {
+		background-color: $whiteFull !important;
+	}
+}

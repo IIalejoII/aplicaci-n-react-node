@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import './assets/scss/main.scss';
 import { Header } from './components/Header'
 import { Users } from './components/Users'
 import { DisplayBoard } from './components/DisplayBoard'
@@ -12,7 +12,8 @@ class App extends Component {
   state = {
     user: {},
     users: [],
-    numberOfUsers: 0
+    numberOfUsers: 0,
+    products: []
   }
 
   createUser = (e) => {

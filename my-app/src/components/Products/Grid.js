@@ -1,0 +1,1 @@
+<Link to={{pathname: `product/${product.name}`, query: { id: product.id }}}></Link>
