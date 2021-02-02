@@ -1,366 +1,54 @@
-header {
-  &#app-header {
-    position: relative;
-    background: $white;
-    box-shadow: 0 0 5px 0 rgba($dark, 0.5);
-
-    h3 {
-      display: inline-block;
-    }
-
-    ul {
-      float: right;
-      text-align: right;
-
-      li {
-        margin-top: 4px;
-        margin-left: 6px;
-
-        a {
-          display: block;
-          padding: 5px;
-        }
-      }
-    }
-
-    @media screen and (max-width: 742px) {
-      h3 {
-        display: block;
-        text-align: center;
-      }
-
-      ul {
-        float: none;
-        text-align: center;
-      }
-    }
-  }
-}
-
-#home-header {
-  background: $white;
-  height: auto;
-  text-align: center;
-  transition: all 0.4s ease-in-out;
-
-  @media only screen and(min-width:768px) {
-    height: 90px;
-    text-align: initial;
-  }
-
-  .dropdown-menu {
-    top: 17px !important;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
-
-  &.sticky-top {
-
-    .middle-bar,
-    .bottom-bar {
-      display: none;
-
-      @media only screen and (min-width: 768px) {
-        display: block;
-      }
-    }
-
-    .dropdown-menu {
-      top: 5px !important;
-      background-color: $primary-dark;
-
-      .dropdown-item {
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-
-        &:hover {
-          color: $primary-dark !important;
-        }
-      }
-    }
-  }
-
-  &.sticky-top {
-    background-color: $primary-dark !important;
-    position: fixed;
-    top: 0;
+#ml-navbar {
+  background: $primary-yellow;
+  padding: 1em;
+  input[type="text"] {
+    border: 0 rgba(0,0,0,.2);
+    color: #333;
+    font-size: 16px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
     width: 100%;
-    z-index: $zindex-fixed;
+    height: 100%;
+    margin: 0;
+    padding: 3px 3px 3px 15px;
+    font-family: inherit;
+    min-width: 600px;
+  }
 
-    @media only screen and (min-width: 768px) {
-      height: 68px;
-    }
+  .left,
+  .right {
+    display: inline-block;
+  }
 
-    >.row {
-      height: auto;
-    }
+  .right {
+    margin-left: 30px;
+  }
 
-    .left-lists {
-      margin: 0;
-
-      >li {
-        vertical-align: middle;
-      }
-
-      i {
-        color: $white;
-      }
-    }
-
-    .right-lists {
-      margin: 0;
-
-      >li {
-        a {
-          color: $white;
-        }
-      }
-    }
-
-    .home-logo {
-      >a {
+  .search-bar {
+    position: relative;
+    .nav-search-btn {
+      position: absolute;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      width: 30px;
+      height: 30px;
+      border: none;
+      background: #f0f0f0;
+      .nav-icon-search {
         position: relative;
-
-        img {
-          width: 70px;
-        }
-      }
-    }
-  }
-
-  >.row {
-    height: auto;
-
-    @media only screen and (min-width: 768px) {
-      height: 90px;
-    }
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  .left-lists {
-    padding-left: 0;
-    margin-bottom: 0;
-    padding: 10px 0;
-
-    @media only screen and(min-width:768px) {
-      padding: 0;
-    }
-
-    i {
-      color: $primary-dark;
-    }
-
-    >li:first-child {
-      margin-left: 0;
-    }
-
-    >li {
-      margin: 0 7px;
-      display: inline-block;
-      vertical-align: top;
-      position: relative;
-
-      .btn {
         &:before {
           content: "";
-          background-color: $primary-dark;
-          width: 1px;
-          height: 25px;
-          position: absolute;
-          left: -20px;
-          top: 2px;
-        }
-      }
-    }
-
-    >li:last-child {
-      margin-left: 40px;
-    }
-  }
-
-  .right-lists {
-    margin-bottom: 0;
-    float: none;
-    padding: 10px 0;
-
-    @media only screen and (min-width: 768px) {
-      float: right;
-      padding: 0;
-    }
-
-    >li {
-      margin: 0 3px;
-      display: inline-block;
-
-      a {
-        color: $primary-dark;
-      }
-
-      .b-dropdown {
-        .dropdown-toggle {
-          &.btn {
-            padding: 0;
-          }
-
-          &:after {
-            display: none;
-          }
-
-          &+.dropdown-menu {
-            border: none;
-            min-width: auto;
-
-            >.dropdown-item {
-              padding: 0;
-              color: $primary-dark;
-              background: $primary-light-blue;
-              border-radius: 50%;
-              font-size: 14px;
-              font-weight: bold;
-              width: 40px;
-              height: 40px;
-              position: relative;
-              text-align: center;
-              margin-top: 7px;
-              line-height: 40px;
-            }
-          }
-        }
-      }
-    }
-
-    >li:last-child {
-      position: relative;
-      margin-left: 35px;
-
-      &:before {
-        content: "";
-        background-color: $primary-dark;
-        width: 1px;
-        height: 30px;
-        position: absolute;
-        left: -20px;
-        top: 15px;
-      }
-    }
-  }
-
-  .home-logo {
-    >a {
-      @media only screen and (min-width: 768px) {
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        margin: auto;
-        z-index: $zindex-fixed;
-      }
-    }
-  }
-}
-
-#app-navigation {
-  .logo {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-  }
-  .user-toggler,
-  .user-thumbnail {
-    border: none;
-    position: relative;
-    background: none;
-    &:focus {
-      border: none;
-      box-shadow: none;
-    }
-    img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: solid 1px $white;
-    }
-    &:after {
-      position: absolute;
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 900;
-      content: "\f0c9";
-      color: $white;
-      bottom: 3px;
-      right: 10px;
-      font-size: 16px;
-    }
-    &.sidebar {
-      img {
-        border-color: transparent;
-        vertical-align: middle;
-        margin-right: 10px;
-      }
-      &:after {
-        display: none;
-      }
-      a {
-        display: block;
-        &:hover {
-          text-decoration: none;
-        }
-      }
-      .close-button {
-        position: absolute;
-        right: 0;
-        top: 0;
-        font-size: 24px;
-      }
-      .user-info {
-        vertical-align: middle;
-        .name {
-          color: $primary-dark;
-          font-weight: 700;
-        }
-      }
-      .recipe-section {
-        ul {
-          padding-left: 15px;
-          list-style: none;
+          background-image: url('../../media/ic_Search.png');
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 16px;
+          height: 16px;
+          top: 0;
+          left: 0;
+          display: block;
         }
       }
     }
   }
-  .navbar {
-    // TODO 
-    .dropdown-menu {
 
-    }
-  }
-  .mobile-navbar {
-    display: flex !important;
-    flex-direction: row;
-    padding: 0;
-    @media only screen and(min-width: 768px) {
-      display: none !important;
-    }
-    .navbar-button {
-      padding: 8px 15px;
-      background-color: $whiteFull;
-      flex: 1;
-      text-align: center;
-      font-size: 28px;
-      &.active {
-        background-color: $primary-orange;
-        color: $whiteFull;
-      }
-    }
-  }
-}
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
-}
-
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
 }

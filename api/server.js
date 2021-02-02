@@ -56,19 +56,14 @@ const products = [
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../my-app/build')));
 
-app.get('/api/users', (req, res) => {
-  console.log('api/users called!')
-  res.json(users);
-});
-
-app.get('/api/users', (req, res) => {
-  console.log('api/users called!')
-  res.json(users);
-});
-
 app.get('/api/products', (req, res) => {
   console.log('api/products called!')
   res.json(products);
+});
+
+app.get('/api/users', (req, res) => {
+  console.log('api/users called!')
+  res.json(users);
 });
 
 app.post('/api/user', (req, res) => {

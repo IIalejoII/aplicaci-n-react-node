@@ -6,6 +6,8 @@ import { Users } from './components/Users'
 import { DisplayBoard } from './components/DisplayBoard'
 import CreateUser from './components/CreateUser'
 import { getAllUsers, createUser } from './services/UserService'
+import { getProducts } from './services/ProductService'
+import { ProductsGrid } from './components/Products/Grid'
 
 class App extends Component {
 
@@ -13,7 +15,9 @@ class App extends Component {
     user: {},
     users: [],
     numberOfUsers: 0,
-    products: []
+    products: [],
+    numberOfProducts: 0,
+    search : ''
   }
 
   createUser = (e) => {
@@ -21,6 +25,14 @@ class App extends Component {
         .then(response => {
           console.log(response);
           this.setState({numberOfUsers: this.state.numberOfUsers + 1})
+      });
+  }
+
+  getProducts = () => {
+    getProducts()
+      .then(products => {
+        console.log(products)
+        this.setState({products: products, numberOfProducts: products.length})
       });
   }
 
@@ -44,11 +56,25 @@ class App extends Component {
       this.setState({user})
   }
 
+  searchOnChange = (event) => {
+    console.log('On change search: ', event.target.value);
+    this.setState({
+      search: event.target.value
+    })
+  }
+
+  searchWord = (event) => {
+    
+  }
+
   render() {
     
     return (
       <div className="App">
-        <Header></Header>
+        <Header 
+          searchOnChange={this.searchOnChange} 
+          search={this.search}
+        />
         <div className="container mrgnbtm">
           <div className="row">
             <div className="col-md-8">
@@ -65,11 +91,18 @@ class App extends Component {
                   getAllUsers={this.getAllUsers}
                 >
                 </DisplayBoard>
+
+                <displaySearch
+                  numberOfProducts={this.state.numberOfProducts}
+                  getProducts={this.getProducts}
+                >
+                </displaySearch>
             </div>
           </div>
         </div>
         <div className="row mrgnbtm">
           <Users users={this.state.users}></Users>
+          <ProductsGrid products={this.state.products}></ProductsGrid>
         </div>
       </div>
     );
