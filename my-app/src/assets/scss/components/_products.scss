@@ -32,5 +32,17 @@
         @media only screen and(min-width: 768px) {
             padding: 1rem;
         }
+        .condition {
+            font-size: 14px;
+        }
+        .price {
+            font-size: 1.5rem;
+        }
+        .title {
+            font-weight: bold;
+        }
+        button {
+            width: 100%;
+        }
     }
 }

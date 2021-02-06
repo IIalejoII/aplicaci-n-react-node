@@ -17,6 +17,7 @@ const products = [
     slug: 'apple-ipod-touch-5g-16g',
     salesCount: 234,
     categories: 'Electrónica, Audio y Video > Ipod > Reproductores > Ipod Touch > 32gb',
+    condition: 'Usado'
   },
   {
     id: 1,
@@ -28,6 +29,7 @@ const products = [
     slug: 'apple-ipod-touch-5g-16g',
     salesCount: 100,
     categories: 'Electrónica, Audio y Video > Ipod > Reproductores > Ipod Touch > 32gb',
+    condition: 'Usado'
   },
   {
     id: 2,
@@ -39,6 +41,7 @@ const products = [
     slug: 'apple-ipod-touch-5g-16g',
     salesCount: 15,
     categories: 'Electrónica, Audio y Video > Ipod > Reproductores > Ipod Touch > 32gb',
+    condition: 'Nuevo'
   },
   {
     id: 3,
@@ -50,6 +53,7 @@ const products = [
     slug: 'apple-ipod-touch-5g-16g',
     salesCount: 99,
     categories: 'Electrónica, Audio y Video > Ipod > Reproductores > Ipod Touch > 32gb',
+    condition: 'Nuevo'
   }
 ];
 

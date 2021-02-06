@@ -11,14 +11,30 @@ export const ProductView = ({product}) => {
                 </div>
                 <div className="col-12 col-sm-4">
                     <div className="information">
-
+                        <div className="condition">
+                           <span>{product.condition} </span> 
+                           -
+                           <span>{product.salesCount} vendidos</span>
+                        </div>
+                        <div className="title">
+                            {product.title}
+                        </div>
+                        <div className="price">
+                            {product.price}
+                        </div>
+                        <button className="btn btn-primary">
+                            Comprar
+                        </button>
                     </div>
                 </div>
             </div>
             <div className="row">
                 <div className="col-12">
                     <div className="additional-information">
-                        <h2>{product.description}</h2>
+                        <h2>Descripción del producto</h2>
+                        <div className="description">
+                            {product.description}
+                        </div>
                     </div>
                 </div>
             </div>
