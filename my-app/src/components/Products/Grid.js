@@ -1,18 +1,13 @@
 import React from 'react'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    NavLink
-  } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-export const ProductsGrid = ({products, search, renderProduct}) => {
+export const ProductsGrid = ({products}) => {
 
     if (products.length === 0) return null
 
     const ProductCol = (product,index) => {
         return(
-            <div class="product">
+            <div className="product">
                 <div className="row">
                     <div className="col-12 col-md-2">
                         <div className="product-photo">

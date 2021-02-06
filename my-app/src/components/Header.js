@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from '../assets/media/Logo_ML.png';
-import {NavLink} from 'react-router-dom'
+import { NavLink} from 'react-router-dom'
 
 export const Header = ({searchOnChange, searchProducts }) => {
     return(
@@ -16,14 +16,14 @@ export const Header = ({searchOnChange, searchProducts }) => {
                                 onChange={(e) => searchOnChange(e)}
                                 type="text" 
                                 placeholder="Nunca dejes de buscar" 
-                                tabindex="1"/>
+                                tabIndex="1"/>
                             
                             <button 
                                 onClick= {(e) => searchProducts()}
                                 type="submit" 
-                                class="nav-search-btn" 
-                                tabindex="2">
-                                <div role="img" aria-label="Buscar" class="nav-icon-search"></div>
+                                className="nav-search-btn" 
+                                tabIndex="2">
+                                <div role="img" aria-label="Buscar" className="nav-icon-search"></div>
                             </button>
                         </div>
                     </div>

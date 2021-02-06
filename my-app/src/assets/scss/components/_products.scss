@@ -1,27 +1,36 @@
-#product-list {
-    .product {
+#product{
+    &-list {
+        .product {
+            background: $white;
+            padding: 2rem;
+            @media only screen and(min-width: 768px) {
+                padding: 1rem;
+            }
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+            .price {
+                font-size: 1.5rem;
+            }
+            .title {
+                max-width: 400px;
+            }
+            .region {
+                font-size: 14px;
+                @media only screen and(min-width: 768px) {
+                    position: absolute;
+                    top: 0;
+                    right: 30px;
+                }
+            }
+        }
+    }
+    &-view {
         background: $white;
         padding: 2rem;
         @media only screen and(min-width: 768px) {
             padding: 1rem;
-        }
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        .price {
-            font-size: 1.5rem;
-        }
-        .title {
-            max-width: 400px;
-        }
-        .region {
-            font-size: 14px;
-            @media only screen and(min-width: 768px) {
-                position: absolute;
-                top: 0;
-                right: 30px;
-            }
         }
     }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Switch, Route} from 'react-router-dom'
+import {Switch, Route, Redirect } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/scss/main.scss';
 import { Header } from './components/Header'
@@ -7,11 +7,13 @@ import { searchProducts } from './services/ProductService'
 import { ProductsGrid } from './components/Products/Grid'
 import { ProductView } from './components/Products/View' 
 import { NotFound } from './components/NotFound' 
+import { stringToSlug } from "./helpers/helpers.js"
 
 class App extends Component {
 
   state = {
     products: [],
+    hideProducts : false,
     numberOfProducts: 0,
     search : ''
   }
@@ -19,21 +21,31 @@ class App extends Component {
   renderProduct = (routerProps) => {
     let productId = parseInt(routerProps.match.params.id)
     let foundProduct = this.state.products.find(productObj => productObj.id === productId)
-    console.log( 'productId: ' + foundProduct)
-    console.log( 'foundProduct: ' + foundProduct)
-    return (foundProduct ? <ProductView product={foundProduct}/> : <NotFound/>)
+    return (
+      foundProduct ? 
+      <ProductView 
+        product={foundProduct}/> :
+        <NotFound/>
+    )
+  }
+
+  hideProducts = () => {
+    this.setState({hideProducts: true})
+  }
+
+  showProducts = () => {
+    this.setState({hideProducts: false})
   }
 
   searchOnChange = (event) => {
-    console.log('On change search: ', event.target.value);
     this.setState({search: event.target.value})
   }
 
   searchProducts = (e) => {
     searchProducts(this.state.search)
       .then(products => {
-        console.log(products);
         this.setState({products: products, numberOfProducts: products.length})
+        this.showProducts()
       });
   }
 
@@ -46,18 +58,17 @@ class App extends Component {
           searchProducts={this.searchProducts}
         />
 
-        <div className="row mrgnbtm">
-          <ProductsGrid 
-            products={this.state.products}
-            search={this.search}
-            renderProduct={this.renderProduct}
-            />
+        <div className="content">
+
+          {!this.state.hideProducts ? <ProductsGrid products={this.state.products}></ProductsGrid> : null}
+
+          <Switch>
+            <Route exact path = '/' />
+            <Route path = '/product/:id/:slug' render = {routerProps => this.renderProduct(routerProps)} />
+            <Route component = {NotFound} />
+          </Switch>
         </div>
-        <Switch>
-          <Route exact path = '/' />
-          <Route path = '/product/:id/:slug' render = {routerProps => this.renderProduct(routerProps)} />
-          <Route component = {NotFound} />
-        </Switch>
+
       </div>
     );
 
